@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import dbInit from "./owner/Infrastructure/db/mongodb";
+import dbInit from "../db/mongodb";
 import route from "./owner/Infrastructure/routes/owner.route";
 import petroute from "./pet/infrastructure/route/pet.route";
 const app = express();
