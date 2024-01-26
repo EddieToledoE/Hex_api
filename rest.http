@@ -1,0 +1,37 @@
+### Crear Owner
+POST http://localhost:7777/owner
+Content-Type: application/json
+
+{
+    "name":"Eddie",
+    "phone":9661034332,
+    "pet":"Michael"
+} 
+
+### Obtener
+GET http://localhost:7777/owner
+Content-Type: application/json
+
+{
+    "uuid":"fe57df50-86f6-416f-896f-420fc66fdd93"
+} 
+
+ 
+### Crear Pet
+POST http://localhost:7777/pet
+Content-Type: application/json
+
+{
+    "name":"Winter",
+    "breed":"Cat",
+    "age":11,
+    "vaccinated":false
+} 
+
+### Vacuna  
+PUT http://localhost:7777/pet
+Content-Type: application/json
+
+{
+    "name":"Winter"
+} 
