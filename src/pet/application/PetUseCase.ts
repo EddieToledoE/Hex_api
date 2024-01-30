@@ -1,26 +1,13 @@
 import { PetRepository } from "../domain/pet.repository";
-import { PetValue } from "../domain/pet.value";
+import { RegisterPetUseCase } from "./registerPet.useCase";
+import { vaccinatePetUseCase } from "./vaccinatePet.useCase";
+
 export class PetUseCase {
-  constructor(private readonly petRepo: PetRepository) {}
+  public registerPet: RegisterPetUseCase;
+  public vaccinatePet: vaccinatePetUseCase;
 
-  public vaccinatePet = async (name: string) => {
-    const pet = await this.petRepo.vaccinatePet(name);
-    return pet;
-  };
-
-  public registerPet = async ({
-    name,
-    breed,
-    age,
-    vaccinated,
-  }: {
-    name: string;
-    breed: string;
-    age: number;
-    vaccinated: boolean;
-  }) => {
-    const petValue = new PetValue({ name, breed, age, vaccinated });
-    const petCreated = await this.petRepo.registerPet(petValue);
-    return petCreated;
-  };
+  constructor(private readonly petRepository: PetRepository) {
+    this.registerPet = new RegisterPetUseCase(petRepository);
+    this.vaccinatePet = new vaccinatePetUseCase(petRepository);
+  }
 }

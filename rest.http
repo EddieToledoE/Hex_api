@@ -1,32 +1,29 @@
 ### Crear Owner
-POST http://localhost:7777/owner
+POST http://localhost:7777/owner/create
 Content-Type: application/json
 
 {
-    "name":"Eddie",
-    "phone":9661034332,
-    "pet":"Michael"
+    "name":"Judith",
+    "phone":9661228933,
+    "pet":"Yupanqui"
 } 
 
-### Obtener
-GET http://localhost:7777/owner
+### Obtener a81efe70-683c-43d3-91af-fc6ee5467922(id Judith) fe57df50-86f6-416f-896f-420fc66fdd93(Eddie)
+GET http://localhost:7777/owner/a81efe70-683c-43d3-91af-fc6ee5467922
  
 ### Crear Pet
-POST http://localhost:7777/pet
+POST http://localhost:7777/pet/create
 Content-Type: application/json
 
 {
-    "name":"Winter",
+    "name":"Yupanqui",
     "breed":"Cat",
-    "age":11,
+    "age":1,
     "vaccinated":false
 } 
 
 
 ### Vacuna 
-PUT http://localhost:7777/pet
+PUT http://localhost:7777/pet/vaccinate/Yupanqui
 Content-Type: application/json
 
-{
-    "name":"Winter"
-} 

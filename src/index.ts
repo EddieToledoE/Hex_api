@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const port = process.env.PORT || 1001;
+const port = process.env.PORT ?? 1001;
 
 app.use(route);
 app.use(petroute);

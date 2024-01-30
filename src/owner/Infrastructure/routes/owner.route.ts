@@ -9,7 +9,12 @@ const mongoRepository = new MongoRepository();
 const ownerUseCase = new OwnerUseCase(mongoRepository);
 const ownerCtrl = new OwnerController(ownerUseCase);
 
-ownerroute.post("/owner", ownerCtrl.insertCtrl);
-ownerroute.get("/owner", ownerCtrl.getCtrl);
+ownerroute.post("/owner/create", (req, res) =>
+  ownerCtrl.insertOwner.insertCtrl(req, res)
+);
+
+ownerroute.get("/owner/:uuid", (req, res) =>
+  ownerCtrl.getOwner.getCtrl(req, res)
+);
 
 export default ownerroute;

@@ -7,7 +7,12 @@ const mongorepo = new MongoRepository();
 const petUseCase = new PetUseCase(mongorepo);
 const petCtrl = new PetController(petUseCase);
 
-petroute.post("/pet", petCtrl.insertCtrl);
-petroute.put("/pet", petCtrl.putCtrl);
+petroute.post("/pet/create", (req, res) =>
+  petCtrl.insertPet.insertCtrl(req, res)
+);
+
+petroute.put("/pet/vaccinate/:name", (req, res) =>
+  petCtrl.vaccinatePet.vaccinateCtrl(req, res)
+);
 
 export default petroute;
