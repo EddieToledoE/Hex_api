@@ -1,0 +1,48 @@
+### Crear Owner
+POST http://localhost:7777/owner/create
+Content-Type: application/json
+
+{
+    "name":"Prueba Borrar",
+    "phone":9661234567,
+    "pet":"Yupanqu2i"
+} 
+
+### Obtener a81efe70-683c-43d3-91af-fc6ee5467922(id Judith) fe57df50-86f6-416f-896f-420fc66fdd93(Eddie)
+GET http://localhost:7777/owner/8ae2b784-6cdf-4738-bece-34b219d39c9d
+  
+### Crear Pet
+POST http://localhost:7777/pet/create
+Content-Type: application/json
+
+{
+    "name":"Yupanqui",
+    "breed":"Cat",
+    "age":1,
+    "vaccinated":false
+} 
+
+
+### Vacuna 
+PUT http://localhost:7777/pet/vaccinate/Yupanqui
+Content-Type: application/json
+
+### Borrar Owner
+DELETE http://localhost:7777/owners/delete/786316a9-2214-4699-a281-6f3897caaa97
+
+### Crear User
+POST http://localhost:7777/users
+Content-Type: application/json
+
+{
+    "username":"Prueba encriptar",
+    "password":"prueba"
+} 
+
+### Probar Broker
+POST http://localhost:7777/enviar-mensaje
+Content-Type: application/json
+
+{
+    "mensaje":"Hola"
+}
